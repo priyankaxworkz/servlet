@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Registration</title>
+
+
+<style>
+
+ .container{
+ position:absolute;
+ right:400px;
+ }
+
+
+</style>
+</head>
+<body background="https://images.pexels.com/photos/1656377/pexels-photo-1656377.jpeg">
+
+
+<div class="container">
+
+<form actions="" method="post">
+
+<h1>RegistreHere</h1>
+
+<div class="content">
+
+<br>
+<div class="input-box">
+<label for="username">userName</label>
+<input type="text" id="inputName" placeholder="enter user name" name="uname"  onblur="onName()" required >
+<span id="nameError"></span>
+</div>
+<br>
+<div class="input-box">
+<label for="phone">contactNumber</label>
+<input type="tel" id="inputNumber" placeholder="contactNumber" name="phone" onblur="validateNumber()" required>
+
+</div>
+<br>
+<div class="input-box">
+<label for="email">emailId</label>
+<input type="email" id="inputEmail" placeholder="enter email" name="email" required>
+</div>
+<br>
+<div class="input-box">
+<label for="phoneNumber">Alternative Phone Number</label>
+<input type="tel" id="inputAlternativeNumber" placeholder="alternative contactNumber" name="phone" onblur="validteNumber()" required>
+</div>
+<br>
+<div class="input-box">
+<label for="age">age</label>
+<input type="text" id="inputAge" placeholder="enter age" name="age" required>
+</div>
+<br>
+<div class="input-box">
+<label for="place">Place</label>
+<input type="text" id="inputPlace" placeholder="enter place name" name="name" required>
+</div>
+<br>
+<span class="gender">Gender</span>
+<div class="gender-category">
+<input type="radio" name="gender" id="male">
+<label for="male">male</label>
+<input type="radio" name="gender" id="female">
+<label for="female">female</label>
+<input type="radio" name="gender" id="others">
+<label for="others">others</label>
+</div>
+</div>
+<br>
+
+<div class="button-container">
+<a href="success.html">
+<button type="button" class="login-btn" id="button" onblur="onName()" disabled="disabled">Register</button>
+</a>
+</div>
+</form>
+
+</div>
+
+<script>
+function onName(){
+	var name=document.getElementById("inputName").value;
+	if(name.length<3){
+		document.getElementById("nameError").innerHTML="<span style='color:red'>invalidname</span>";
+		document.getElementById("button").disabled=true;
+		
+	}else{
+		document.getElementById("nameError").innerHTML="";
+		document.getElementById("button").disabled=false;
+	}
+}
+
+</script>
+</body>
+</html>
